@@ -1,0 +1,12 @@
+:host {
+    display: inline-block;
+    min-width: 240px;
+    box-shadow: 1px 2px 2px black;
+    position: absolute;
+}
+
+.contextmenu-items {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}

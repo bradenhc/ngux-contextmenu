@@ -1,0 +1,16 @@
+:host {
+    display: flex;
+}
+
+.item-contents {
+    padding: 3px;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    width: 100%;
+}
+
+.item-contents:hover {
+    background-color: blue;
+    padding: 3px;
+}
