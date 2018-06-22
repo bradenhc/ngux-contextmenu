@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, HostListener } from '@angular/core';
+import { ContextmenuService } from '../contextmenu.service';
 
 @Component({
   selector: 'ngux-contextmenu-item',
@@ -7,18 +8,21 @@ import { Component, OnInit, Input, Output, EventEmitter, ElementRef } from '@ang
 })
 export class ContextmenuItemComponent implements OnInit {
 
-  @Input() name: string;
+  @Input('text') 
+  public text: string;
 
-  @Output('rightclick') rightClickEvent: EventEmitter<any> = new EventEmitter();
+  @Input('icon')
+  public icon: string;
 
-  constructor() { }
+  constructor(private cmService: ContextmenuService) { }
 
   ngOnInit() {
   }
 
-  private stopEvent(e: Event){
-    e.preventDefault();
-    e.stopPropagation();
+  @HostListener('contextmenu', ['$event'])
+  public stopEvent($event: Event){
+    $event.preventDefault();
+    $event.stopPropagation();
   }
 
 }

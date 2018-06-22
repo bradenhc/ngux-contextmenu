@@ -1,6 +1,6 @@
-<p #rightclick>Right Click Me!!</p>
-<ngux-contextmenu [trigger]="rightclick">
-    <ngux-contextmenu-item name="Hello World!" (rightclick)="onClick($event)"></ngux-contextmenu-item>
-    <ngux-contextmenu-item name="Hello World!" (rightclick)="onClick($event)"></ngux-contextmenu-item>
-    <ngux-contextmenu-item name="Hello World!" (rightclick)="onClick($event)"></ngux-contextmenu-item>
+<p nguxContextmenuTrigger>Right Click Me!!</p>
+<p nguxContextmenuTrigger>Right Click Me!!</p>
+<ngux-contextmenu>
+    <ngux-contextmenu-item [icon]="'globe'" [text]="'Say Hello World'" (click)="sayHello()"></ngux-contextmenu-item>
+    <ngux-contextmenu-item [text]="'Say Goodbye'" (click)="sayGoodbye()"></ngux-contextmenu-item>
 </ngux-contextmenu>

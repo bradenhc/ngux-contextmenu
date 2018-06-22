@@ -8,8 +8,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app';
 
-  onClick(event){
-    alert("Hello world!");
+  sayHello() {
+    alert("Hello World!");
+  }
+
+  sayGoodbye() {
+    alert("Goodbye!");
   }
 
 
