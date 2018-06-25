@@ -15,8 +15,6 @@ npm install @ngux/contextmenu --save
 yarn add @ngux/contextmenu
 ```
 
-This package depends on the `@fortawesome/angular-fontawesome` package.
-
 ## Usage
 
 The simplest way to use the context menu is first to *import* the `ContextMenuModule` in your
@@ -24,13 +22,11 @@ component module:
 
 ```typescript
 import { ContextMenuModule } from '@ngux/contextmenu';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
     ...
     imports: [
         ...
-        FontAwesomeModule,
         ContextMenuModule
     ]
     ...
