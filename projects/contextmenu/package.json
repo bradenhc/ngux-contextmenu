@@ -1,13 +1,33 @@
 {
-  "name": "ngux-contextmenu",
+  "name": "@ngux/contextmenu",
+  "description": "A simple right-click context menu for Angular 6 applications",
   "version": "1.0.0",
+  "license": "MIT",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bradenhitchcock/ngux-contextmenu.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bradenhitchcock/ngux-contextmenu/issues"
+  },
+  "homepage": "https://github.com/bradenhitchcock/ngux-contextmenu",
+  "keywords": [
+    "context menu",
+    "contextmenu",
+    "rightclick",
+    "right click",
+    "angular",
+    "angular 6"
+  ],
+  "author": {
+    "name": "Braden Hitchcock",
+    "email": "developer.hitchcock@gmail.com"
+  },
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
-    "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
-  },
-  "dependencies": {
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
     "@fortawesome/angular-fontawesome": "0.1.0-10",
-    "@fortawesome/fontawesome-svg-core": "^1.2.0",
-    "@fortawesome/free-solid-svg-icons": "^5.1.0"
+    "@fortawesome/fontawesome-svg-core": "^1.2.0"
   }
 }
