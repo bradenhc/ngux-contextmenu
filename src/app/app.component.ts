@@ -13,11 +13,11 @@ export class AppComponent {
   faGlobe = faGlobe;
 
   sayHello() {
-    alert("Hello World!");
+    console.log("Hello World!");
   }
 
   sayGoodbye() {
-    alert("Goodbye!");
+    console.log("Goodbye!");
   }
 
 

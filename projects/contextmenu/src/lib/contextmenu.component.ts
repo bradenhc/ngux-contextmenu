@@ -12,7 +12,7 @@ export class ContextMenuComponent implements OnInit {
     private cmService: ContextMenuService,
     private rend: Renderer2
   ) {
-      this.cmService.renderer = rend;
+      this.cmService.renderer = this.rend;
   }
 
   @Input('scope') public scope: string = '';

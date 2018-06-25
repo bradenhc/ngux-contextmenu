@@ -1,6 +1,6 @@
-<p nguxContextMenuTrigger [scope]="'myscope'">Right Click Me!!</p>
-<p nguxContextMenuTrigger [scope]="'anotherscope'">Right Click Me!!</p>
-<ngux-contextmenu [scope]="'myscope'">
-    <ngux-contextmenu-item [icon]="faGlobe" [text]="'Say Hello World'" (click)="sayHello()"></ngux-contextmenu-item>
+<p nguxContextMenuTrigger>Right Click Me!!</p>
+<p nguxContextMenuTrigger>Right Click Me!!</p>
+<ngux-contextmenu>
+    <ngux-contextmenu-item [icon]="faGlobe" [text]="'Say Hello World'" [alias]="'Ctrl + s'" (click)="sayHello()"></ngux-contextmenu-item>
     <ngux-contextmenu-item [text]="'Say Goodbye'" (click)="sayGoodbye()"></ngux-contextmenu-item>
 </ngux-contextmenu>

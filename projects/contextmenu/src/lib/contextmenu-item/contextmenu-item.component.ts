@@ -14,6 +14,9 @@ export class ContextMenuItemComponent implements OnInit {
   @Input('icon')
   public icon: any = '';
 
+  @Input('alias')
+  public alias: string = '';
+
   constructor(private cmService: ContextMenuService) { }
 
   ngOnInit() {
