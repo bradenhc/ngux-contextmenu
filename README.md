@@ -1,17 +1,24 @@
 # NGUX Context Menu
 
 A simple right-click context menu for Angular 6 applications with support for Font Awesome icons
-via the `@fortawesome/angular-fontawesome` module.
+via the 
+[`@fortawesome/angular-fontawesome`](https://www.npmjs.com/package/@fortawesome/angular-fontawesome) 
+module.
 
-### Install using NPM
+## Installation
 
-```
-npm install @ngux/contextmenu --save
-```
+This module has a dependency on `@fortawesome/angular-fontawesome`. Font Awesome provides several
+beautiful and modern icons for free that are available to use to decorate the context menu
+items. For now, this means that the dependency is required. The next release will remove this
+required dependency and instead offer it as an option. Until then, please install the required
+dependencies.
 
 ### Install using Yarn
 
 ```
+yarn add @fortawesome/fontawesome-svg-core
+yarn add @fortawesome/free-solid-svg-icons
+yarn add @fortawesome/angular-fontawesome
 yarn add @ngux/contextmenu
 ```
 
@@ -47,8 +54,8 @@ And then to *include* the context menu and triggers in your HTML file:
 </ngux-contextmenu>
 ```
 
-You can also use the `nguxContextMenuTrigger` on multiple HTML elements to open a single context
-menu definition from multiple triggers:
+You can also use the `nguxContextMenuTrigger` directive on multiple HTML elements to open a single 
+context menu definition from multiple triggers:
 
 ```html
 <!-- Context menu trigger -->
@@ -99,7 +106,7 @@ menu, but right-clicking the content between the `<span>` tags will not.
 <span nguxContextMenuTrigger>Right Click Me Too!!</span>
 
 <!-- Context Menu Definition -->
-<ngux-contextmenu [scope]="'myscope">
+<ngux-contextmenu [scope]="'myscope'">
     <ngux-contextmenu-item [text]="'Say Hello World'" (click)="sayHello()"></ngux-contextmenu-item>
     <ngux-contextmenu-item [text]="'Say Goodbye'" (click)="sayGoodbye()"></ngux-contextmenu-item>
 </ngux-contextmenu>

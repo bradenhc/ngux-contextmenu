@@ -1,20 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ContextmenuComponent } from './contextmenu.component';
+import { ContextMenuComponent } from './contextmenu.component';
 
 describe('ContextmenuComponent', () => {
-  let component: ContextmenuComponent;
-  let fixture: ComponentFixture<ContextmenuComponent>;
+  let component: ContextMenuComponent;
+  let fixture: ComponentFixture<ContextMenuComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContextmenuComponent ]
-    })
-    .compileComponents();
+      declarations: [ContextMenuComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ContextmenuComponent);
+    fixture = TestBed.createComponent(ContextMenuComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
