@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ContextmenuComponent } from './contextmenu.component';
-import { ContextmenuItemComponent } from './contextmenu-item/contextmenu-item.component';
-import { ContextmenuService, ContextmenuEvent } from './contextmenu.service';
-import { ContextmenuTriggerDirective } from './context-trigger.directive';
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { ContextMenuComponent } from './contextmenu.component';
+import { ContextMenuItemComponent } from './contextmenu-item/contextmenu-item.component';
+import { ContextMenuService } from './contextmenu.service';
+import { ContextMenuTriggerDirective } from './context-trigger.directive';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
-  imports: [CommonModule, AngularFontAwesomeModule],
-  declarations: [ContextmenuComponent, ContextmenuItemComponent, ContextmenuTriggerDirective],
-  exports: [ContextmenuComponent, ContextmenuItemComponent, ContextmenuTriggerDirective],
-  providers: [ContextmenuService]
+  imports: [CommonModule, FontAwesomeModule],
+  declarations: [ContextMenuComponent, ContextMenuItemComponent, ContextMenuTriggerDirective],
+  exports: [ContextMenuComponent, ContextMenuItemComponent, ContextMenuTriggerDirective],
+  providers: [ContextMenuService]
 })
-export class ContextmenuModule {}
+export class ContextMenuModule {}

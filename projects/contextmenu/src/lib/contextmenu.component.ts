@@ -1,29 +1,28 @@
-import { Component, OnInit, Input, ViewChild, ElementRef, HostListener, Renderer2 } from '@angular/core';
+import { Component, OnInit, ElementRef, HostListener, Input, Renderer2 } from '@angular/core';
+import { ContextMenuService } from './contextmenu.service';
 
 @Component({
   selector: 'ngux-contextmenu',
   templateUrl: './contextmenu.component.html',
   styleUrls: ['./contextmenu.component.css']
 })
-export class ContextmenuComponent implements OnInit {
+export class ContextMenuComponent implements OnInit {
+  constructor(
+    private ref: ElementRef,
+    private cmService: ContextMenuService,
+    private rend: Renderer2
+  ) {
+      this.cmService.renderer = rend;
+  }
 
-  @Input('theme')
-  public theme: string = '';
-
-  @Input('hover')
-  public hoverTheme: string = '';
-
-  constructor(private renderer: Renderer2, private ref: ElementRef) {}
+  @Input('scope') public scope: string = '';
 
   ngOnInit() {
-    this.renderer.listen(this.ref.nativeElement, 'click', e => {
-      this.close(e);
-    });
+    this.cmService.register(this.scope, this.ref);
   }
 
   @HostListener('document:click', ['$event'])
   close($event: MouseEvent) {
-    $event.stopPropagation()
-    $event.preventDefault();
+    this.cmService.close(this.scope, $event);
   }
 }

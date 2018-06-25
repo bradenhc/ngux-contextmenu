@@ -2,7 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { ContextmenuModule } from 'projects/contextmenu/src/public_api';
+import { ContextMenuModule } from 'projects/contextmenu/src/public_api';
+
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -10,7 +12,8 @@ import { ContextmenuModule } from 'projects/contextmenu/src/public_api';
   ],
   imports: [
     BrowserModule,
-    ContextmenuModule
+    ContextMenuModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

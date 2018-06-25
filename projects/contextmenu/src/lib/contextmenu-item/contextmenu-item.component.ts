@@ -1,20 +1,20 @@
 import { Component, OnInit, Input, HostListener } from '@angular/core';
-import { ContextmenuService } from '../contextmenu.service';
+import { ContextMenuService } from '../contextmenu.service';
 
 @Component({
   selector: 'ngux-contextmenu-item',
   templateUrl: './contextmenu-item.component.html',
   styleUrls: ['./contextmenu-item.component.css']
 })
-export class ContextmenuItemComponent implements OnInit {
+export class ContextMenuItemComponent implements OnInit {
 
   @Input('text') 
-  public text: string;
+  public text: string = 'Item';
 
   @Input('icon')
-  public icon: string;
+  public icon: any = '';
 
-  constructor(private cmService: ContextmenuService) { }
+  constructor(private cmService: ContextMenuService) { }
 
   ngOnInit() {
   }

@@ -1,17 +1,24 @@
-import { Directive, HostListener, Renderer2, OnInit } from '@angular/core';
+import { Directive, HostListener, OnInit, Input, Renderer2 } from '@angular/core';
+import { ContextMenuService } from './contextmenu.service';
 
 @Directive({
-  selector: '[nguxContextTrigger]'
+  selector: '[nguxContextMenuTrigger]'
 })
-export class ContextmenuTriggerDirective {
-  constructor(public renderer: Renderer2) {}
+export class ContextMenuTriggerDirective implements OnInit {
+  @Input('scope') public scope: string = '';
+
+  constructor(
+    private cmService: ContextMenuService,
+    private rend: Renderer2
+  ) {
+    this.cmService.renderer = rend;
+  }
+
+  ngOnInit() {
+  }
 
   @HostListener('contextmenu', ['$event'])
   public onContextMenu($event): void {
-    let cm: HTMLElement = this.renderer.selectRootElement('ngux-contextmenu');
-    this.renderer.setStyle(cm, 'top', $event.y + 10 + 'px');
-    this.renderer.setStyle(cm, 'left', $event.x + 10 + 'px');
-    $event.preventDefault();
-    $event.stopPropagation();
+    this.cmService.open(this.scope, $event);
   }
 }

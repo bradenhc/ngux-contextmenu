@@ -1,28 +1,41 @@
-import { Injectable, EventEmitter } from '@angular/core';
-
-export interface ContextmenuEvent {
-  mousex: number,
-  mousey: number,
-  data: any
-}
-
-export type ContextmenuCallback = (data: ContextmenuEvent) => void;
+import { Injectable, ElementRef, Renderer2 } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ContextmenuService {
+export class ContextMenuService {
+  private scopeElements: Map<string, ElementRef> = new Map();
 
-  private event: EventEmitter<ContextmenuEvent> = new EventEmitter();
+  public renderer: Renderer2;
 
-  constructor() { }
+  constructor() {}
 
-  emitContextmenu(data: ContextmenuEvent) {
-    this.event.emit(data);
+  register(scope: string, element: ElementRef): void {
+    this.scopeElements.set(scope, element);
+    this.renderer.listen(element.nativeElement, 'click', e => {
+      this.close(scope, e);
+    });
   }
 
-  onContextmenu(callback: ContextmenuCallback) {
-    this.event.subscribe(callback);
+  open(scope: string, event: MouseEvent): void {
+    if (this.scopeElements.has(scope)) {
+      let ref = this.scopeElements.get(scope).nativeElement;
+      this.renderer.setStyle(ref, 'top', event.y + 'px');
+      this.renderer.setStyle(ref, 'left', event.x + 'px');
+      this.renderer.setStyle(ref, 'display', 'flex');
+      event.stopPropagation();
+      event.preventDefault();
+    }
   }
 
+  close(scope: string, event: MouseEvent): void {
+    if (this.scopeElements.has(scope)) {
+      let ref = this.scopeElements.get(scope).nativeElement;
+      this.renderer.setStyle(ref, 'display', 'none');
+      this.renderer.setStyle(ref, 'top', 0 + 'px');
+      this.renderer.setStyle(ref, 'left', 0 + 'px');
+      event.stopPropagation();
+      event.preventDefault();
+    }
+  }
 }
