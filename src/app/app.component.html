@@ -1,6 +1,10 @@
+<!-- Various triggers to test -->
+<p nguxContextMenuTrigger [nguxScope]="'scopeName'">Right Click Me!!</p>
 <p nguxContextMenuTrigger>Right Click Me!!</p>
-<p nguxContextMenuTrigger>Right Click Me!!</p>
-<ngux-contextmenu>
+<button nguxContextMenuTrigger [nguxScope]="'scopeName'" (click)="onButtonClick()">Right Click Me!!</button>
+
+<!-- Context Menu Definition -->
+<ngux-contextmenu [scope]="'scopeName'">
     <ngux-contextmenu-item [icon]="faGlobe" [text]="'Say Hello World'" [alias]="'Ctrl + s'" (click)="sayHello()"></ngux-contextmenu-item>
     <ngux-contextmenu-item [text]="'Say Goodbye'" (click)="sayGoodbye()"></ngux-contextmenu-item>
 </ngux-contextmenu>

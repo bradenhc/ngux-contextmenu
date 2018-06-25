@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, HostListener } from '@angular/core';
+import { Component, Input, HostListener } from '@angular/core';
 import { ContextMenuService } from '../contextmenu.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { ContextMenuService } from '../contextmenu.service';
   templateUrl: './contextmenu-item.component.html',
   styleUrls: ['./contextmenu-item.component.css']
 })
-export class ContextMenuItemComponent implements OnInit {
+export class ContextMenuItemComponent {
 
   @Input('text') 
   public text: string = 'Item';
@@ -18,9 +18,6 @@ export class ContextMenuItemComponent implements OnInit {
   public alias: string = '';
 
   constructor(private cmService: ContextMenuService) { }
-
-  ngOnInit() {
-  }
 
   @HostListener('contextmenu', ['$event'])
   public stopEvent($event: Event){

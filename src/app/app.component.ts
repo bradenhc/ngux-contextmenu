@@ -20,5 +20,12 @@ export class AppComponent {
     console.log("Goodbye!");
   }
 
+  onButtonClick(): void {
+    console.log("Button clicked!");
+  }
+
+  onContextMenu(): void {
+    console.log("Context menu in app detected");
+  }
 
 }
